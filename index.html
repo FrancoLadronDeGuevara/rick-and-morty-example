@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Rick and Morty API</title>
+    <style>
+      .hero-section {
+        background-image: url("https://wallpapers-clan.com/wp-content/uploads/2025/06/rick-and-morty-sunset-voyage-desktop-wallpaper-cover.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center text-2xl font-bold py-4">Rick and Morty API</h1>
+    <section class="hero-section"></section>
+    <section class="p-6">
+      <h2 class="text-center font-bold text-xl mb-4">Filtrar personajes</h2>
+
+      <div class="flex gap-5 justify-center items-center">
+        <input
+          type="text"
+          class="min-w-0 bg-gray-100 py-1.5 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none rounded"
+          id="name-input"
+          placeholder="Buscar por nombre..."
+        />
+        <select
+          class="min-w-0 bg-gray-100 py-2 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none rounded"
+          id="status-filter"
+        >
+          <option value="">Estado</option>
+          <option value="alive">Vivo</option>
+          <option value="dead">Muerto</option>
+          <option value="unknown">Desconocido</option>
+        </select>
+
+        <select
+          class="min-w-0 bg-gray-100 py-2 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none rounded"
+          id="species-filter"
+        >
+          <option value="">Especie</option>
+          <option value="human">Humano</option>
+          <option value="alien">Alien</option>
+          <option value="robot">Robot</option>
+          <option value="unknown">Desconocido</option>
+        </select>
+
+        <button
+          class="bg-lime-500 py-2 px-4 rounded-full text-white font-bold cursor-pointer hover:bg-lime-600"
+          id="search-button"
+        >
+          Buscar
+        </button>
+      </div>
+    </section>
+
+    <section
+      class="flex justify-center flex-wrap gap-4 py-5 min-h-screen"
+      id="results"
+    ></section>
+
+    <section id="details" class="hidden flex justify-center my-5"></section>
+
+    <section
+      class="flex gap-3 justify-center items-center mb-5"
+      id="pagination"
+    >
+      <button
+        class="bg-lime-500 py-2 px-4 rounded hover:bg-lime-600 cursor-pointer text-white font-bold"
+        id="prev-btn"
+      >
+        Anterior
+      </button>
+      <span class="py-1.5 px-4 border rounded" id="page-num">1</span>
+      <button
+        class="bg-lime-500 py-2 px-4 rounded hover:bg-lime-600 cursor-pointer text-white font-bold"
+        id="next-btn"
+      >
+        Siguiente
+      </button>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
