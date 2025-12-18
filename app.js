@@ -45,8 +45,6 @@ function fetchCharacters() {
 
   const species = $speciesFilter.value;
 
-  const url = new URL("https://rickandmortyapi.com/api/character");
-
   url.searchParams.set("page", page);
 
   if (name) url.searchParams.set("name", name);
